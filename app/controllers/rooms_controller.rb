@@ -8,6 +8,7 @@ class RoomsController < ApplicationController
 
   # GET /rooms/1 or /rooms/1.json
   def show
+    @messages = @room.messages
   end
 
   # GET /rooms/new

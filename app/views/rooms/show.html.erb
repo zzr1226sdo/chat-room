@@ -10,5 +10,16 @@
   <%= @room.topic %>
 </p>
 
+<h1>Messages</h1>
+
+    <% @messages.each do |message| %>
+
+        <%= message.content %> ------
+        <%= link_to 'Show', message %>
+        <%= link_to 'Edit', edit_message_path(message) %>
+        <%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+    <% end %>
+
 <%= link_to 'Edit', edit_room_path(@room) %> |
 <%= link_to 'Back', rooms_path %>
